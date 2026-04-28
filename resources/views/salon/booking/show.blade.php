@@ -5,7 +5,7 @@
     <div class="col-md-7">
         <div class="card mb-3">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <span><i class="bi bi-receipt me-2"></i>Booking #{{ $booking->id }}</span>
+                <span>Booking #{{ $booking->id }}</span>
                 <span class="badge badge-{{ $booking->status }} fs-6">{{ ucfirst($booking->status) }}</span>
             </div>
             <div class="card-body">
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="card-footer bg-white d-flex gap-2">
-                <a href="{{ route('payments.process', $booking) }}" class="btn btn-pink"><i class="bi bi-cash-coin me-1"></i>Process Payment</a>
+                <a href="{{ route('payments.process', $booking) }}" class="btn btn-pink">Process Payment</a>
                 <a href="{{ route('bookings.index') }}" class="btn btn-outline-secondary">Back</a>
             </div>
         </div>

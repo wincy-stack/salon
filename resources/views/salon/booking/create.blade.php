@@ -4,7 +4,7 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header"><i class="bi bi-calendar-plus me-2"></i>Create New Booking</div>
+            <div class="card-header">Create New Booking</div>
             <div class="card-body">
                 <form action="{{ route('bookings.store') }}" method="POST">
                     @csrf
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="d-flex gap-2 mt-2">
-                        <button type="submit" class="btn btn-pink"><i class="bi bi-calendar-check me-1"></i>Create Booking</button>
+                        <button type="submit" class="btn btn-pink">Create Booking</button>
                         <a href="{{ route('bookings.index') }}" class="btn btn-outline-secondary">Cancel</a>
                     </div>
                 </form>

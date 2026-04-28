@@ -7,7 +7,7 @@
 
         {{-- Booking Summary --}}
         <div class="card mb-3">
-            <div class="card-header"><i class="bi bi-receipt me-2"></i>Booking Summary</div>
+            <div class="card-header">Booking Summary</div>
             <div class="card-body">
                 <div class="row g-3">
                     <div class="col-sm-6">
@@ -35,10 +35,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="text-muted small">Current Payment Status</div>
-                        <span class="badge badge-{{ $payment->payment_status }}">
-                            <i class="bi bi-{{ $payment->payment_status == 'paid' ? 'check-circle' : 'hourglass-split' }} me-1"></i>
-                            {{ ucfirst($payment->payment_status) }}
-                        </span>
+                        <span class="badge badge-{{ $payment->payment_status }}">{{ ucfirst($payment->payment_status) }}</span>
                     </div>
                     <div class="col-12">
                         <div class="alert mb-0" style="background:var(--primary-light);border:none">
@@ -54,10 +51,10 @@
 
         {{-- Process Payment Form --}}
         <div class="card mb-3">
-            <div class="card-header"><i class="bi bi-cash-coin me-2"></i>Update Payment</div>
+            <div class="card-header">Update Payment</div>
             <div class="card-body">
                 <form action="{{ route('payments.update', $payment) }}" method="POST">
-                    @csrf @method('PUT')
+                    @csrf @method('PU
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Payment Status <span class="text-danger">*</span></label>
@@ -67,7 +64,7 @@
                                     value="unpaid" {{ $payment->payment_status == 'unpaid' ? 'checked' : '' }}
                                     onchange="toggleMethod(this.value)">
                                 <label class="form-check-label text-danger fw-semibold" for="statusUnpaid">
-                                    <i class="bi bi-hourglass-split me-1"></i>Unpaid
+                                    Unpaid
                                 </label>
                             </div>
                             <div class="form-check">
@@ -75,7 +72,7 @@
                                     value="paid" {{ $payment->payment_status == 'paid' ? 'checked' : '' }}
                                     onchange="toggleMethod(this.value)">
                                 <label class="form-check-label text-success fw-semibold" for="statusPaid">
-                                    <i class="bi bi-check-circle me-1"></i>Paid
+                                    Paid
                                 </label>
                             </div>
                         </div>
@@ -103,12 +100,8 @@
                     </div>
 
                     <div class="d-flex gap-2 mt-4">
-                        <button type="submit" class="btn btn-pink">
-                            <i class="bi bi-check-lg me-1"></i>Save Payment
-                        </button>
-                        <a href="{{ route('payments.index') }}" class="btn btn-outline-secondary">
-                            <i class="bi bi-arrow-left me-1"></i>Back to Payments
-                        </a>
+                        <button type="submit" class="btn btn-pink">Save Payment</button>
+                        <a href="{{ route('payments.index') }}" class="btn btn-outline-secondary">Back to Payments</a>
                     </div>
                 </form>
             </div>
@@ -116,11 +109,11 @@
 
         {{-- Transaction Record --}}
         <div class="card">
-            <div class="card-header"><i class="bi bi-clock-history me-2"></i>Transaction Record</div>
+            <div class="card-header">Transaction Record</div>
             <div class="card-body p-0">
                 <table class="table mb-0">
                     <thead>
-                        <tr><th>Field</th><th>Value</th></tr>
+                        <tr><th>Field
                     </thead>
                     <tbody>
                         <tr>

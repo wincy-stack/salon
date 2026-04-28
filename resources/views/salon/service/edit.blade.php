@@ -4,7 +4,7 @@
 <div class="row justify-content-center">
     <div class="col-md-7">
         <div class="card">
-            <div class="card-header"><i class="bi bi-pencil me-2"></i>Edit Service</div>
+            <div class="card-header">Edit Service</div>
             <div class="card-body">
                 <form action="{{ route('services.update', $service) }}" method="POST">
                     @csrf @method('PUT')
@@ -30,7 +30,7 @@
                         <textarea name="description" class="form-control" rows="3">{{ old('description', $service->description) }}</textarea>
                     </div>
                     <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-pink"><i class="bi bi-check-lg me-1"></i>Update Service</button>
+                        <button type="submit" class="btn btn-pink">Update Service</button>
                         <a href="{{ route('services.index') }}" class="btn btn-outline-secondary">Cancel</a>
                     </div>
                 </form>

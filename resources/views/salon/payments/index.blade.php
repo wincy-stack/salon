@@ -6,7 +6,7 @@
 <div class="row g-3 mb-4">
     <div class="col-md-3">
         <div class="card p-3">
-            <div class="text-muted small mb-1"><i class="bi bi-cash-stack me-1"></i>Total Revenue</div>
+            <div class="text-muted small mb-1">Total Revenue</div>
             <div class="fs-5 fw-bold" style="color:var(--primary-color)">
                 ₱{{ number_format($payments->where('payment_status','paid')->sum('amount'), 2) }}
             </div>
@@ -14,19 +14,19 @@
     </div>
     <div class="col-md-3">
         <div class="card p-3">
-            <div class="text-muted small mb-1"><i class="bi bi-check-circle me-1"></i>Paid</div>
+            <div class="text-muted small mb-1">Paid</div>
             <div class="fs-5 fw-bold text-success">{{ $payments->where('payment_status','paid')->count() }}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="card p-3">
-            <div class="text-muted small mb-1"><i class="bi bi-hourglass-split me-1"></i>Unpaid</div>
+            <div class="text-muted small mb-1">Unpaid</div>
             <div class="fs-5 fw-bold text-danger">{{ $payments->where('payment_status','unpaid')->count() }}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="card p-3">
-            <div class="text-muted small mb-1"><i class="bi bi-receipt me-1"></i>Total Transactions</div>
+            <div class="text-muted small mb-1">Total Transactions</div>
             <div class="fs-5 fw-bold">{{ $payments->count() }}</div>
         </div>
     </div>
@@ -48,7 +48,7 @@
                 <label class="form-label mb-0 text-muted small fw-semibold">Search:</label>
                 <input type="text" name="search" class="form-control form-control-sm" placeholder="Customer or service…" value="{{ request('search') }}" style="width:200px">
             </div>
-            <button class="btn btn-sm btn-outline-secondary" type="submit"><i class="bi bi-search me-1"></i>Filter</button>
+            <button class="btn btn-sm btn-outline-secondary" type="submit">Filter</button>
             @if(request('status') || request('search'))
                 <a href="{{ route('payments.index') }}" class="btn btn-sm btn-link text-muted p-0">Clear</a>
             @endif
@@ -59,7 +59,7 @@
 {{-- Payment History Table --}}
 <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <span><i class="bi bi-clock-history me-2"></i>Payment History</span>
+        <span>Payment History</span>
         <span class="text-muted small">{{ $payments->count() }} record(s)</span>
     </div>
     <div class="card-body p-0">
@@ -109,22 +109,18 @@
                 </td>
                 <td><span class="badge badge-{{ $p->booking->status }}">{{ ucfirst($p->booking->status) }}</span></td>
                 <td>
-                    <span class="badge badge-{{ $p->payment_status }}">
-                        <i class="bi bi-{{ $p->payment_status == 'paid' ? 'check-circle' : 'hourglass-split' }} me-1"></i>
-                        {{ ucfirst($p->payment_status) }}
-                    </span>
+                    <span class="badge badge-{{ $p->payment_status }}">{{ ucfirst($p->payment_status) }}</span>
                 </td>
                 <td class="text-center">
                     <a href="{{ route('payments.process', $p->booking) }}"
                        class="btn btn-sm btn-outline-primary" title="Process / Edit Payment">
-                        <i class="bi bi-cash-coin"></i>
+                        Pay
                     </a>
                 </td>
-            </tr>
+            </tr>Pay
             @empty
             <tr>
                 <td colspan="10" class="text-center text-muted py-5">
-                    <i class="bi bi-cash-coin fs-2 d-block mb-2"></i>
                     No payment records found.
                 </td>
             </tr>

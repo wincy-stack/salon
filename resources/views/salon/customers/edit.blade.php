@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-6">
         <div class="card">
-            <div class="card-header"><i class="bi bi-pencil me-2"></i>Edit Customer</div>
+            <div class="card-header">Edit Customer</div>
             <div class="card-body">
                 <form action="{{ route('customers.update', $customer) }}" method="POST">
                     @csrf @method('PUT')
@@ -37,8 +37,8 @@
                         @enderror
                     </div>
                     <div class="d-flex gap-2">
-                        <button type="submit" class="btn btn-pink"><i class="bi bi-check-lg me-1"></i>Update Customer</button>
-                        <a href="{{ route('customers.index') }}" class="btn btn-secondary"><i class="bi bi-x-lg me-1"></i>Cancel</a>
+                        <button type="submit" class="btn btn-pink">Update Customer</button>
+                        <a href="{{ route('customers.index') }}" class="btn btn-secondary">Cancel</a>
                     </div>
                 </form>
             </div>
