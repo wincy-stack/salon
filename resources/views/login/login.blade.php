@@ -20,7 +20,7 @@
 <body>
     <div class="login-card">
         <div class="brand">
-            <h2><span>Nail</span>Salon Pro</h2>
+            <h2>NailSalon Pro</h2>
             <p class="text-muted small">Sign in to manage your salon</p>
         </div>
         @if($message = session('success'))
